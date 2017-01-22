@@ -10,7 +10,7 @@
     <p id="currentValues">選択した値： no select</p>
     <script>
       var elms = document.querySelectorAll('input[name="room_check"]');
-      [].forEach.call(elms, function(elm){elm.onchange = onChange});
+      Array.forEach.call(elms, function(elm){elm.onchange = onChange});
 
       function onChange(){
           elms = document.querySelectorAll('input[name="room_check"]:checked');
