@@ -10,12 +10,11 @@
     <p id="currentValues">選択した値： no select</p>
     <script>
       var elms = document.querySelectorAll('input[name="room_check"]');
-      for(var i = 0; i < elms.length; i++) elms[i].onchange = onChange;
+      [].forEach.call(elms, function(elm){elm.onchange = onChange});
 
       function onChange(){
-          elms  = document.querySelectorAll('input[name="room_check"]:checked');
-          var vals = [];
-          for(var i = 0; i < elms.length; i++) vals.push(elms[i].value);
+          elms = document.querySelectorAll('input[name="room_check"]:checked');
+          var vals = [].map.call(elms, function(elm){return elm.value});
           currentValues.innerText = '選択した値：' + (vals.join(',') || 'no select');
       }
     </script>
