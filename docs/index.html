@@ -14,7 +14,7 @@
 
       function onChange(){
           elms = document.querySelectorAll('input[name="room_check"]:checked');
-          var vals = Array.prototpye.map.call(elms, function(elm){return elm.value});
+          var vals = Array.prototype.map.call(elms, function(elm){return elm.value});
           currentValues.innerText = '選択した値：' + (vals.join(',') || 'no select');
       }
     </script>
